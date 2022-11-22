@@ -72,8 +72,6 @@ function removeAll(node){
 }
 
 function getWordsRangeList(words,colorList) {
-
-    let default_color = '#15687f'
     let keywords = words.split(' ');
     let aColor;
     if(colorList.indexOf(' ') === -1){
@@ -81,12 +79,14 @@ function getWordsRangeList(words,colorList) {
     }else{
         aColor = colorList.split(' ');
     }
-    if(colorList === '' || colorList === undefined) aColor = [default_color];
     keywords = keywords.filter(v=>v);
     aColor = aColor.filter(v=>v);
+    let color_length = aColor.length
+    console.log('color_length.:'+color_length)
     keywords.forEach(function (k,index){
         if(k === '' || k === undefined) return;
-        highlightWordInTextNodeOnly(k, !aColor[index]?aColor[aColor.length-1]:aColor[index])
+        console.log('mode.:'+index % color_length)
+        highlightWordInTextNodeOnly(k, aColor[index % color_length])
     })
 }
 

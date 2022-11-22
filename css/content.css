@@ -53,3 +53,10 @@
 .highlighted.style-9 {
   background: #8bd23e;
 }
+
+.chrome-extension-highlight{
+  color: #fff!important;
+  padding: 0.1rem!important;
+  border-radius: 0.2rem!important;
+  font-weight: 500!important;
+}
